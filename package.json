@@ -2,7 +2,7 @@
   "name": "glon-cli",
   "version": "1.0.4",
   "description": "tools for 9lon ",
-  "main":  "./index.js",
+  "main": "./index.js",
   "bin": {
     "glon-cli": "index.js"
   },
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/9lon/glon-cli#readme",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "tar": "^2.2.1"
   }
 }

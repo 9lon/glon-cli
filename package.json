@@ -1,0 +1,22 @@
+{
+  "name": "glon-cli",
+  "version": "1.0.0",
+  "description": "tools for 9lon ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9lon/glon-cli.git"
+  },
+  "keywords": [
+    "glon"
+  ],
+  "author": "somchit chanudom <somchit.c@nexts-corp.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/9lon/glon-cli/issues"
+  },
+  "homepage": "https://github.com/9lon/glon-cli#readme"
+}

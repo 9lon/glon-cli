@@ -1,5 +1,5 @@
 /node_modules
 /public/bower_components
-/loggers/*
+/loggers/*.log
 /java/libs/nylon-report/build
 /java/libs/nylon-utility/build

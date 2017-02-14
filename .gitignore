@@ -1,9 +1,5 @@
 /node_modules
-/app
-/sass
-/config
 /public/bower_components
 /loggers/*
-/template/public/bower_components
 /java/libs/nylon-report/build
 /java/libs/nylon-utility/build

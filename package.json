@@ -1,29 +1,47 @@
 {
-  "name": "glon-cli",
-  "version": "1.0.4",
-  "description": "tools for 9lon ",
-  "main": "./index.js",
+  "name": "nylon-cli",
+  "version": "1.2.7",
+  "description": "nylon command line interface",
+  "main": "./command.js",
   "bin": {
-    "glon-cli": "index.js"
+    "nylon-cli": "command.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/9lon/glon-cli.git"
+    "url": "git+https://github.com/9lon/nylon-cli.git"
   },
-  "keywords": [
-    "glon"
-  ],
-  "author": "somchit chanudom <somchit.c@nexts-corp.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/9lon/glon-cli/issues"
-  },
-  "homepage": "https://github.com/9lon/glon-cli#readme",
+  "homepage": "https://github.com/9lon/nylon-cli#README",
+  "author": "somchit chanudom",
+  "license": "CDE",
   "dependencies": {
+    "ajv": "^4.9.0",
+    "async": "^2.1.4",
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.22.0",
     "commander": "^2.9.0",
-    "tar": "^2.2.1"
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "express-session-rethinkdb": "^0.4.1",
+    "fs-extra": "^1.0.0",
+    "http2": "^3.3.6",
+    "jade": "^1.11.0",
+    "java": "^0.8.0",
+    "morgan": "^1.7.0",
+    "node-sass": "^4.5.0",
+    "node-sass-middleware": "^0.10.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "rethinkdb": "^2.3.3",
+    "rethinkdb-init": "^0.2.2",
+    "rethinkdbdash": "^2.3.27",
+    "socket.io": "^1.7.2",
+    "spdy": "^3.4.4",
+    "winston": "^2.3.0"
   }
 }

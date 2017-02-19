@@ -8,7 +8,7 @@
 	<template>
         <style is="custom-style">
 			app-toolbar {
-				background-color: #f7941e;
+				background-color: #95bf31;
 				color: white;
 				font-family: 'rsuregular', sans-serif;
        			-webkit-font-smoothing: antialiased;
@@ -35,20 +35,35 @@
 		</style>
 		<app-toolbar>
 				<paper-icon-button icon="menu" on-tap="toggleDrawer"></paper-icon-button>
-				<iron-image src="./../../images/manifest/icon-32.png"></iron-image>
-				<div main-title>ระบบจัดการโควตาข้าวภายใต้โควตาภาษีสหภาพยุโรป</div>
-				<paper-button on-tap="changeLanguage">{{localize('Meg')}}</paper-button>
-				<!--<div class="sectionContent" bottom-item>
-					<iron-icon icon="chevron-right"></iron-icon>
-					รายการจัดสรรปีโควตา
-				</div>-->
+				<iron-image src="/images/icon/white/app-icon-32.png"></iron-image>
+				<div main-title>PENGUIN</div>
+				<div style="cursor: pointer" on-tap="logout" hidden="{{hidden}}">
+					<paper-icon-button icon="exit-to-app"></paper-icon-button>Logout
+				</div>
+				<div style="cursor: pointer" on-tap="logout" hidden="{{!hidden}}">
+					<paper-icon-button icon="power-settings-new"></paper-icon-button>
+					Log-in
+				</div>
 		</app-toolbar>
-		
 	</template>
 	<script>
         Polymer({
             is: 'layout-main-toolbar',
-			behaviors:[nylonLocalizeBehavior],
+			behaviors: [nylonLocalizeBehavior,ReduxBehavior],
+			properties:{
+				user:{
+					 statePath:'auth.user',
+					 observer:'check'
+				}
+			},
+			check:function(){
+				if(this.user.id){
+					this.hidden = false;
+				}
+				else {
+					this.hidden = true;
+				}
+			},
 			attached:function(){
 				 this.nylonLocalizeImport('/i18n-page1.json');
 			},
@@ -62,6 +77,17 @@
                 this.nylonLocalizeChange('th');
               } 
             },
+			logout:function(){
+				this.hidden = true;
+				localStorage.removeItem('token');
+				if(this.user.role=="none"){
+					this.fire('nylon-change-page',{path:'/login'})
+				}else{
+					window.location = "/login"
+				}
+				//this.fire('nylon-change-page',{path:'/login'})
+				//  this.AUTH_LOGOUT();
+			}
         });
     </script>
 </dom-module>

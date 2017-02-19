@@ -1,4 +1,5 @@
 /node_modules
+/appxxx
 /public/bower_components
 /loggers/*.log
 /java/libs/nylon-report/build

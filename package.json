@@ -1,13 +1,15 @@
 {
   "name": "nylon-cli",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "nylon command line interface",
   "main": "./command.js",
   "bin": {
     "nylon-cli": "command.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm-run-all --parallel nylon redux",
+    "nylon": "nylon-cli serve",
+    "redux": "webpack"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth20": "^1.0.0",
+    "passport-jwt": "^2.2.1",
     "passport-local": "^1.0.0",
     "rethinkdb": "^2.3.3",
     "rethinkdb-init": "^0.2.2",

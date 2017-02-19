@@ -1,0 +1,58 @@
+<link rel="import" href="./components/question-list.html">
+<link rel="import" href="./components/question-manage.html">
+
+<dom-module id="page-question">
+    <template>
+        <style include="page-style"></style>
+        <div class="xcontainer">
+            <div class="header gl-large">จัดการคำถาม</div>
+            <question-list></question-list>
+        </div>
+        <div class="fixed">
+            <paper-fab icon="icons:add" title="นำเข้ารายงาน" on-tap="openPanelRight"></paper-fab>
+        </div>
+        <panel-right title="{{titleRight}}">
+            <question-manage data="{{data}}" status="[[status]]"></question-manage>
+        </panel-right>
+    </template>
+    <script>
+        Polymer({
+            is: 'page-question',
+            behaviors:[questionAction],
+            listeners:{
+                'close':'closePanelRight',
+                'select-data':'selectList'
+            },
+            selectList:function(e){
+                this.titleRight = 'แก้ไขคำถาม';
+                this.status = 'update';
+                //console.log(e.detail);
+                this.data = {
+                    user_id:'admin',
+                    topic:'',
+                    choice:[],
+                    tag:[]
+                }
+                setTimeout(()=>{
+                    this.data = e.detail;
+                },'20')
+                
+                this.$$('panel-right').open();
+            },
+            openPanelRight:function(){
+                this.titleRight = 'เพิ่มคำถาม';
+                this.data = {
+                    user_id:'admin',
+                    topic:'',
+                    choice:[],
+                    tag:[]
+                }
+                this.status = 'add'
+                this.$$('panel-right').open();
+            },
+            closePanelRight:function(){
+                this.$$('panel-right').close();
+            }
+        });
+    </script>
+</dom-module>

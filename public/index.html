@@ -5,33 +5,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-  <title>ระบบจัดการโควตาข้าวภายใต้โควตาภาษีสหภาพยุโรป</title>
-
-  <link rel="shortcut icon" sizes="32x32" href="/images/app-icon-32.png">
+  <title>PENGUIN</title>
+  
+  <link rel="shortcut icon" sizes="32x32" href="/images/icon/green/app-icon-32.png">
   <link rel="manifest" href="/manifest.json">
+  <!--link rel="import" href="/api/push/import"-->
 
-  <script mqtt></script>
-   <link rel="import" href="/oauth">
-   <link rel="import" href="/pusher">
-   <link rel="import" href="/bower_components/polymer/polymer.html">
-
-  <!-- script src="/bower_components/axios/dist/axios.min.js"></script -->
-  <!-- script>axios.defaults.baseURL = 'api'</script -->
-
-  <!--link rel="import" href="/src/nylon-app.html" async -->
+  <script>Polymer = {lazyRegister: true, dom: 'shadow'};</script>
+  <link rel="import" href="/bower_components/polymer/polymer.html">
+  
+  
+  
+  <link rel="import" href="/src/nylon-app.html" async>
   
   <style>
-   @font-face {
+
+    @font-face {
         font-family: 'CSChatThaiUI';
         src: url('/bower_components/gl-font/fonts/csChatThai/CSChatThaiUI.ttf');
     }
+
     body {
       margin: 0;
-        font-family: 'CSChatThaiUI';
+      background: #efefef;
     }
     
     #toolbar {
-      background-color: #f7941e;
+      background-color: #95bf31;
       color: white;
       font-family: 'rsuregular', sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -79,15 +79,43 @@
       display: -webkit-flex;
       display: flex;
     }
+
+    *{
+      font-family: 'CSChatThaiUI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #toolbar > .icon{
+      margin-left:76px;
+      padding-top:18px;
+      float: left;
+    }
+
+    #toolbar > .title{
+      line-height: 62px;
+      margin-left: 20px;
+      
+      font-size: 16px;
+      font-weight:590;
+      float: left;
+      
+    }
+
+    
   </style>
 
 </head>
 
 <body>
-  <img src="/images/test.jpg"/>
-
   <nylon-app unresolved>
-    <div id="toolbar"></div>
+    <div id="toolbar">
+      <div class="icon">
+        <img src="/images/icon/white/app-icon-32.png" alt="">
+      </div>
+      <div class="title">
+        PENGUIN
+      </div>
+    </div>
     <div class="middle">
       <div class="loader"></div>
     </div>
@@ -97,8 +125,6 @@
   <script>
     window.performance && performance.mark && performance.mark('index.html');
 
-    Polymer = {lazyRegister: true, dom: 'shadow'};
-
     (function() {
       if ('registerElement' in document
           && 'import' in document.createElement('link')
@@ -106,9 +132,9 @@
         // platform is good!
       } else {
         // polyfill the platform!
-    //  var e = document.createElement('script');
-    //    e.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
-     //   document.body.appendChild(e);
+        var e = document.createElement('script');
+        e.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
+        document.body.appendChild(e);
       }
     })();
   </script>

@@ -1,5 +1,5 @@
 {
-  "name": "nylon",
+  "name": "nx-lms",
   "homepage": "https://github.com/9lon/nylon",
   "authors": [
     "Namkhaeng PC-NEXT <pongpanot.t@nexts-corp.com>"
@@ -34,7 +34,7 @@
     "paper-elements": "PolymerElements/paper-elements#^1.0.7",
     "iron-elements": "PolymerElements/iron-elements#^1.0.10",
     "gl-grid": "glon-gl-grid#^0.1.2",
-    "gl-form": "glon-gl-form#^0.3.7",
+    "gl-form": "glon-gl-form#^0.4.0",
     "axios": "^0.15.2",
     "vaadin-date-picker": "glon-gl-date-picker#^0.0.4",
     "byutv-jsonp": "^1.2.0",
@@ -42,6 +42,11 @@
     "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#^1.0.16",
     "numeral": "numeralJs#^1.5.3",
     "paho-mqtt": "*",
-    "rxjs": "^4.1.0"
+    "rxjs": "^4.1.0",
+    "vaadin-upload": "^1.1.1",
+    "nylon-upload": "^0.0.2",
+    "redux": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js",
+    "polymer-redux": "^0.3.0",
+    "paper-tags-input": "^1.2.5"
   }
 }

@@ -1,5 +1,43 @@
+exports.info = function (req, res) {
+    res.json(req.user);
+}
 exports.index = function (req, res) {
-    res.sendfile('./public/index.html');
+    //res.sendfile('./public/index.html');
+
+    var session = {
+        id: req.sessionID
+    };
+    console.log(session);
+    
+    r.db("oauth").table("session_ref").get(session.id).run()
+    .then(function(data){
+        
+         res.redirect(data.ref+"?accesskey="+session.id);
+    });
+
+   /* console.log(req.user);
+    res.render('index', {
+        'title': req.user.id,
+        'message': req.user.name,
+        'uname': req.user.email,
+        'photo': req.user.photo
+    });
+
+    if (!req.user) {
+        //  var user = {
+        //   id: 1234,
+        //   name: "somchit",
+        //  email: "somchit.c@nexts-corp.com"
+        //  };
+
+        req.login(user, function (err) {
+
+        });
+
+
+    } else {
+        console.log('is loged');
+    }*/
 }
 exports.db = function (req, res) {
     req.logger.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
@@ -54,12 +92,12 @@ exports.render = function (req, res) {
 exports.push = function (req, res) {
     console.log("Helloxxxx");
     res.pusher([
-    "/bower_components/polymer/polymer.html",
-    "/bower_components/polymer/polymer-mini.html",
-    "/bower_components/polymer/polymer-micro.html",
-     "/images/test.jpg",
-     "/bower_components/gl-font/fonts/csChatThai/CSChatThaiUI.ttf"
-],function(err){
+        "/bower_components/polymer/polymer.html",
+        "/bower_components/polymer/polymer-mini.html",
+        "/bower_components/polymer/polymer-micro.html",
+        "/images/test.jpg",
+        "/bower_components/gl-font/fonts/csChatThai/CSChatThaiUI.ttf"
+    ], function (err) {
         res.end("");
     })
 };

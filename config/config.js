@@ -1,6 +1,7 @@
 var config = {
 
   development: {
+    host:"https://localhost:3000",
     server: {
       port: 3000,
       cluster: 1
@@ -29,19 +30,20 @@ var config = {
       },
       jwt: {
         provider: 'jwt',
-        clientSecret: 'd39bcc969fab3f784ec24c301535b7a4'
+        clientSecret: '123456',
+        timeout: '60s'
       },
       facebook: {
         provoider: 'facebook',
-        clientId: '1438197499538604',
-        clientSecret: 'd39bcc969fab3f784ec24c301535b7a4',
-        callbackURL: 'http://localhost:8080/oauth/facebook/callback'
+        clientId: '157316171444270',
+        clientSecret: '71c15fa338a11f411fc6432b04cad3ca',
+        callbackURL: 'https://localhost:3000/oauth/facebook/callback'
       },
       google: {
         provoider: 'google',
         clientId: '464475406694-skti62k23di8uemcanuc6h6ah5nnl55a.apps.googleusercontent.com',
         clientSecret: '24WehldQ1ZPo2hXCXmxI_FFg',
-        callbackURL: 'http://localhost:8080/oauth/google/callback'
+        callbackURL: 'https://localhost:3000/oauth/google/callback'
       }
     },
     java: true,

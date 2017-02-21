@@ -26,7 +26,7 @@ function app_server(){
 }
 
 program
-  .version('1.2.8')
+  .version('1.2.9')
   .option('-i, init', 'init project',app_init)
   .option('-s, serve', 'start nylon server',app_server)
   .parse(process.argv);

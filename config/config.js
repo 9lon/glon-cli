@@ -20,7 +20,7 @@ var config = {
         key: "/ssl/server.key",
         cert: "/ssl/server.crt"
       },
-      pusher: "auto",
+      pusher: "on",
     },
  
 

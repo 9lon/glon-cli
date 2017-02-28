@@ -117,6 +117,10 @@ public class JDBCConnect {
         }
 
     }
+    
+   public boolean check(String connName){
+      return  this.connections.containsKey(connName);
+   }
 
     public String query(String connName, String sql, Object [] params) {
         if (this.connections.containsKey(connName)) {

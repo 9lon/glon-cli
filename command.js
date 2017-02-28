@@ -19,15 +19,16 @@ function app_init(){
   init.create(__dirname);
 }
 
-function app_server(){
+function app_server(port){
+  console.log(port);
   var server=require('./lib/bin/server');
   console.log("nylon-dir::"+__dirname);
-  server.serve(__dirname);
+  server.serve(__dirname,port);
 }
 
 program
-  .version('1.3.3')
+  .version('1.3.4')
   .option('-i, init', 'init project',app_init)
-  .option('-s, serve', 'start nylon server',app_server)
+  .option('-s, serve <port>', 'start nylon server',app_server)
   .parse(process.argv);
  

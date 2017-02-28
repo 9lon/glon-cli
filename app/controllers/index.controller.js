@@ -1,5 +1,12 @@
+var sha1 = require('sha1');
 exports.info = function (req, res) {
     res.json(req.user);
+}
+exports.sha1=function(req,res){
+    var password = req.query.password;
+        var data = sha1(password);
+        res.send(data);
+
 }
 exports.index = function (req, res) {
     //res.sendfile('./public/index.html');

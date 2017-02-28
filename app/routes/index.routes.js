@@ -5,6 +5,7 @@ module.exports=function(app){
      app.get('/info',index.info);
     app.get('/report',index.report);
      app.get('/push',index.push);
+      app.get('/sha1',index.sha1);
 
     app.get('/xxxx', (req, res) => {
         var stream = res.push('/main.js', {

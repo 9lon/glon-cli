@@ -15,7 +15,7 @@ var config = {
     },
 
     h2: {
-      enable:true,
+      enable:false,
       ssl: {
         key: "/ssl/server.key",
         cert: "/ssl/server.crt"

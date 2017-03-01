@@ -1,6 +1,6 @@
 {
   "name": "nylon-cli",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "description": "nylon command line interface",
   "main": "./command.js",
   "bin": {

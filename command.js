@@ -27,7 +27,7 @@ function app_server(port){
 }
 
 program
-  .version('1.4.0')
+  .version('1.4.1')
   .option('-i, init', 'init project',app_init)
   .option('-s, serve <port>', 'start nylon server',app_server)
   .parse(process.argv);

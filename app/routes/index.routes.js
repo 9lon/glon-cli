@@ -7,5 +7,6 @@ module.exports = function (app) {
     app.get('/report', index.report);
     app.get('/ajv', index.ajv);
     app.get('/pusher', index.pusher);
+      app.get('/sha1', index.sha1);
 
 }

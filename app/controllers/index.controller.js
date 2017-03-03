@@ -1,3 +1,4 @@
+const sha1 = require('js-sha1');
 exports.render = function (req, res) {
     res.render('index', {
         'title': "Hello",
@@ -121,3 +122,9 @@ exports.pusher = function (req, res) {
         res.end("");
     })
 };
+
+ exports.sha1= function(req, res) {
+        var password = req.query.password;
+        var data = sha1(password);
+        res.send(data);
+    }

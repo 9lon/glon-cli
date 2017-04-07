@@ -9,7 +9,6 @@ module.exports = {
     devtool:"inline-source-map"
 };
 
-
 // module.exports = {
 //     entry: [
 //         './public/src/redux-store/index.js'

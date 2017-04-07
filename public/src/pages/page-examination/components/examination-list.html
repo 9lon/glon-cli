@@ -15,18 +15,8 @@
                 <div class="content">
                     <table class="gl-table-default">
                         <thead>
-                            <tr>
-                                <template is="dom-if" if="[[checkTypeList(typeList,'examination')]]">
                                     <th style="width:10%">ลำดับ</th>
                                     <th colspan="2">ชุดข้อสอบ</th>
-                                </template>
-                                <template is="dom-if" if="[[checkTypeList(typeList,'question')]]">
-                                    <th style="width:10%">ข้อที่</th>
-                                    <th>คำถาม</th>
-                                    <th style="text-align: right">
-                                        <paper-button on-tap="random" raised>สุ่มข้อสอบ</paper-button>
-                                    </th>
-                                </template>
                             </tr>
                         </thead>
                         <tbody>

@@ -12,7 +12,7 @@
         }
         app-toolbar{
             color: white;
-            background-color: #95bf31;
+            background-color: #FF753F;
             font-size: 22px;
             /*user-drag: none; 
             user-select: none;
@@ -41,20 +41,26 @@
         paper-icon-item[selected]{
             background-color: #DDD;
         }
+
+        .mymask {
+            width: 32px;
+            height: 32px;
+            mask: url(#mymask);
+            -webkit-mask-box-image: url(/images/icon/default/app-icon-32.png);
+        }
     </style>
         <div class="menu">
                 
                 <paper-material elevation="1">
                     <app-toolbar>
 
-                        <iron-image src="/images/icon/white/app-icon-32.png">
+                        <iron-image src="/images/icon/default/app-icon-32.png">
                         </iron-image>
-                        <!--<iron-icon icon="home" item-icon></iron-icon>-->
-                            PENGUIN
+                            ระบบพิสูจน์บุคคล
                     </app-toolbar>
                 </paper-material>
 				<div role="listbox">
-                    
+
                     <template is="dom-repeat" items="{{listMenu}}" filter="{{menuFilter(user.role)}}">
                         <paper-icon-item on-tap="selectPage" path$="{{item.path}}" focused  index="{{index}}" selected$="{{_checkSelect(path,item.path)}}">
                             <iron-icon icon="chevron-right" item-icon></iron-icon>
@@ -64,6 +70,16 @@
                             </div>
                         </paper-icon-item>
                     </template>
+                    
+                    <!--<template is="dom-repeat" items="{{listMenu}}">
+                        <paper-icon-item on-tap="selectPage" path$="{{item.path}}" focused  index="{{index}}" selected$="{{_checkSelect(path,item.path)}}">
+                            <iron-icon icon="chevron-right" item-icon></iron-icon>
+                            [[item.name]]
+                            <div hidden$="{{!item.loading}}">
+                                <paper-spinner active></paper-spinner>
+                            </div>
+                        </paper-icon-item>
+                    </template>-->
                     
 				</div>
 			</div>
@@ -80,24 +96,19 @@
                     type:Array,
                     value:[
                         {
-                            name: 'จัดการคำถาม',
-                            path: '/question',
-                            role: 'teacher'
+                            name: 'แอปของฉัน',
+                            path: '/my-app/1102001645128',
+                            role: ''
                         },
                         {
-                            name: 'จัดการข้อสอบ',
-                            path: '/examination',
-                            role: 'teacher'
+                            name: 'การเชื่อมต่อ',
+                            path: '/provider',
+                            role: 'ADMIN'
                         },
                         {
-                            name: 'จัดการห้องสอบ',
-                            path: '/examRoom',
-                            role: 'teacher'
-                        },
-                        {
-                            name: 'รายการสอบ',
-                            path: '/examHistory',
-                            role: 'learner'
+                            name: 'จัดการผู้ใช้งาน',
+                            path: '/user',
+                            role: 'ADMIN'
                         }
                     ]
                 },
@@ -111,7 +122,12 @@
                     return null;
                 }else{
                     return function(listMenu) {
-                        return (listMenu.role==role) 
+                        if(listMenu.role==''){
+                            return true
+                        }else{
+                            return (listMenu.role==role)
+                        }
+                         
                     };
                 }
             },

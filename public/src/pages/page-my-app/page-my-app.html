@@ -1,0 +1,84 @@
+<link rel="import" href="./my-app-list.html">
+<link rel="import" href="./my-app-panel.html">
+<link rel="import" href="./app-panel.html">
+
+<link rel="import" href="/src/nylon-param.html">
+
+<dom-module id="page-my-app">
+    <template>
+
+        <style include="page-style">
+            .page{
+                background-color: white;
+            }
+            .fabSave{
+                position: fixed;
+                bottom: 90px;
+                right: 20px;
+                --paper-fab-background: #337ab7;
+            }
+            paper-dialog{
+                width: 50%;
+                height: auto;
+            }
+
+            .fabInsertApp{
+                position: fixed;
+                bottom: 20px;
+                right: 85px;
+                --paper-fab-background: #2d6301;
+            }
+        </style>
+        <nylon-param params="{{getParam}}" pattern="id"></nylon-param>
+        <div class="xcontainer">
+            
+            <div class="header gl-large">
+                App ของฉัน
+            </div>
+            <my-app-list></my-app-list>
+            <panel-right title="">
+                <iron-pages selected="[[selected]]">
+                    <my-app-panel></my-app-panel>
+                    <app-panel></app-panel>
+                </iron-pages>
+            </panel-right>
+        </div>
+
+        <template is="dom-if" if="[[_checkAdmin(user)]]">
+            <paper-fab class="fabInsertApp" icon="icons:add" action="addApp" on-tap="openPanelRight"></paper-fab>
+        </template>
+        
+        <paper-fab icon="icons:archive" action="register" on-tap="openPanelRight"></paper-fab>
+    </template>
+    <script>
+        Polymer({
+            is: 'page-my-app',
+            behaviors: [nylonBehavior,ReduxBehavior,[myAppAction,appAction]],
+            properties:{
+                user:{
+                    statePath:'auth.user'
+                }
+            },
+            _checkAdmin:function(user){
+                return (user.role=='ADMIN')
+            },
+            nylonPageActive:function(){
+                this.dispatchAction('MY_APP_LIST');
+                this.dispatchAction('MY_APP_BALANCE_LIST');
+            },
+            openPanelRight:function(e){
+                //this.dispatchAction('APP_CLEAR_SELECT');
+                var panelRight = this.$$('panel-right');
+                if(e.currentTarget.getAttribute('action')=="register"){
+                    this.selected = 0;
+                    panelRight.title = "ลงทะเบียนแอป"
+                }else{
+                    this.selected = 1;
+                    panelRight.title = "เพิ่มแอป"
+                }
+                
+                panelRight.open();
+            }
+        });
+    </script>
+</dom-module>

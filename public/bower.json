@@ -1,6 +1,6 @@
 {
-  "name": "nx-lms",
-  "homepage": "https://github.com/9lon/nylon",
+  "name": "oauth",
+  "homepage": "https://github.com/nx-apps/nx-oauth.git",
   "authors": [
     "Namkhaeng PC-NEXT <pongpanot.t@nexts-corp.com>"
   ],
@@ -47,6 +47,8 @@
     "nylon-upload": "^0.0.2",
     "redux": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js",
     "polymer-redux": "^0.3.0",
-    "paper-tags-input": "^1.2.5"
+    "paper-tags-input": "^1.2.5",
+    "paper-swatch-picker": "^1.0.2",
+    "paper-tags": "paper-material-tags#^1.1.0"
   }
 }

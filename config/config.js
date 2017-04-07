@@ -1,12 +1,12 @@
 var config = {
-
+ 
   development: {
     host: "https://localhost:3000",
     appId: "d8fcffc5-d1ab-40f1-ac63-d2643d7b9464",
     appKey: "5fc02522e60958787b8298067513c5f4b44ca78a",
     database: {
       host: 'rdb.codeunbug.com',
-      port: 28015
+      port: 28015,
     },
 
     oauth: {
@@ -23,7 +23,7 @@ var config = {
         callbackURL: 'https://localhost:3000/oauth/google/callback'
       }
     },
-    java: true,
+
     jdbc: [
       {
         name: "mysql",

@@ -5,33 +5,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-  <title>PENGUIN</title>
-  
-  <link rel="shortcut icon" sizes="32x32" href="/images/icon/green/app-icon-32.png">
+  <title>ระบบพิสูจน์บุคคล</title>
+
+
+  <link rel="shortcut icon" sizes="32x32" href="/images/icon/default/app-icon-32.png">
   <link rel="manifest" href="/manifest.json">
   <link rel="import" href="/pusher">
 
-  <script>Polymer = {lazyRegister: true, dom: 'shadow'};</script>
+  <script>
+    Polymer = { lazyRegister: true, dom: 'shadow' };
+  </script>
   <link rel="import" href="/bower_components/polymer/polymer.html">
-  
-  
-  
+
+
+
+
   <link rel="import" href="/src/nylon-app.html" async>
-  
+  <script src='https://localhost:3000/oauth/js/d8fcffc5-d1ab-40f1-ac63-d2643d7b9464/5fc02522e60958787b8298067513c5f4b44ca78a'></script>
+
   <style>
-
     @font-face {
-        font-family: 'CSChatThaiUI';
-        src: url('/bower_components/gl-font/fonts/csChatThai/CSChatThaiUI.ttf');
+      font-family: 'CSChatThaiUI';
+      src: url('/bower_components/gl-font/fonts/csChatThai/CSChatThaiUI.ttf');
     }
-
+    
     body {
       margin: 0;
       background: #efefef;
     }
     
     #toolbar {
-      background-color: #95bf31;
+      background-color: #FF753F;
       color: white;
       font-family: 'rsuregular', sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -79,29 +83,27 @@
       display: -webkit-flex;
       display: flex;
     }
-
-    *{
+    
+    * {
       font-family: 'CSChatThaiUI', sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-
-    #toolbar > .icon{
-      margin-left:76px;
-      padding-top:18px;
+    
+    #toolbar > .icon {
+      margin-left: 76px;
+      padding-top: 18px;
       float: left;
     }
-
-    #toolbar > .title{
+    
+    #toolbar > .title {
       line-height: 62px;
       margin-left: 20px;
-      
       font-size: 16px;
-      font-weight:590;
+      font-weight: 590;
       float: left;
-      
     }
-
     
+   
   </style>
 
 </head>
@@ -110,10 +112,10 @@
   <nylon-app unresolved>
     <div id="toolbar">
       <div class="icon">
-        <img src="/images/icon/white/app-icon-32.png" alt="">
+        <img src="/images/icon/default/app-icon-32.png" alt="">
       </div>
       <div class="title">
-        PENGUIN
+        ระบบพิสูจน์บุคคล
       </div>
     </div>
     <div class="middle">
@@ -125,18 +127,23 @@
   <script>
     window.performance && performance.mark && performance.mark('index.html');
 
-    (function() {
+    (function () {
       if ('registerElement' in document
-          && 'import' in document.createElement('link')
-          && 'content' in document.createElement('template')) {
+        && 'import' in document.createElement('link')
+        && 'content' in document.createElement('template')) {
         // platform is good!
       } else {
         // polyfill the platform!
         var e = document.createElement('script');
         e.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
         document.body.appendChild(e);
+
+
       }
+
+
     })();
+    
   </script>
 
 </body>
